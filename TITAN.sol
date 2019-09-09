@@ -54,7 +54,7 @@ contract Titan {
         }
     }
     function leave(string memory uid) public {
-        if(indexOf(uid) == -1){
+        if(indexOf(uid) != -1){
             leaveList.push(uid);
         }
     }
@@ -68,15 +68,15 @@ contract Titan {
         if(i == -1) return 0;
         return eigList[uint(i)];
     }
-    function _setDataValue(string memory k, uint v) public {
-        dataValue[k] = v;
-    }
-    function _setProviderDataList(int i, string memory k) public {
-        providerDataList[i].push(k);
-    }
-    function _setRepMatrix(int i,int j, uint v) public {
-        repMatrix[uint(i)][uint(j)] += v;
-    }
+    // function _setDataValue(string memory k, uint v) public {
+    //     dataValue[k] = v;
+    // }
+    // function _setProviderDataList(int i, string memory k) public {
+    //     providerDataList[i].push(k);
+    // }
+    // function _setRepMatrix(int i,int j, uint v) public {
+    //     repMatrix[uint(i)][uint(j)] += v;
+    // }
 
 
     function updataRep(string memory k, uint v, string memory uid1, string memory uid2) public {
